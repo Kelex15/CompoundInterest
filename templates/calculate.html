@@ -1,0 +1,24 @@
+{% block content %}
+<div class="container">
+	<h1>Compound Calculator</h1>
+	<!-- This is where our form will go. -->
+
+	<form method="POST" action="{{ url_for('home') }}">
+		<label for="initials">Initials:</label>
+		<input type="text" id="initials" name="initials"><br><br>
+		<label for="daily_roi">Daily Roi:</label>
+		<input type="text" id="daily_roi" name="daily_roi"><br><br>
+		<label for="compound_duration">Compound Duration (In Days):</label>
+		<input type="text" id="compound_duration" name="compound_duration"><br><br>
+		<label for="compound_frequency">Compound Frequency (In Minutes):</label>
+		<input type="text" id="compound_frequency" name="compound_frequency"><br><br>
+		<input type="submit" value="Calculate">
+	</form>
+	<span>Balance </span><span> </span>---<span> Earnings</span><br>
+	{% for initial, profit in values %}
+	<span style="color:green">{{ initial }} </span>---<span> </span>
+	<span style="color:blue"> {{ profit }}</span>
+	<br>
+	{% endfor %}
+</div>
+{% endblock %}

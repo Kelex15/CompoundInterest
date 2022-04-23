@@ -1,0 +1,5 @@
+Flask==2.0.3
+flask
+flask-bootstrap==2.3.2.2
+WTForms~=2.3.3
+wtf~=0.1
